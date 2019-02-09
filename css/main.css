@@ -24,13 +24,6 @@ html, body {
     align-items: center;
     justify-items: center;
     background-color: #06021D;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-}
-
-.sidenav-overlay {
-    z-index: 0;
 }
 
 .header img {
@@ -57,6 +50,7 @@ nav .nav-wrapper{
     background-color:#06021D;
     border: none;
     box-shadow: none;
+    float: left;
 }
 
 .content {
@@ -75,7 +69,7 @@ nav .nav-wrapper{
 
 
 .social {
-    margin: 70px;
+    margin: 30px;
 }
 
 .social a {
@@ -134,7 +128,6 @@ em {
 
     .header {
         top: 0;
-        /* right: 0; */
         width: 250px;
         height: 100vh;
         grid-area: nav;
@@ -190,14 +183,12 @@ em {
 
     .content {
         grid-area: main;
-        /* right: 0; */
+        right: 0;
         margin-left: 250px;
         width: calc(100vw - 250px);
     }
 
     .social {
-        margin-top: 0;
-        margin-bottom: 0;
         margin-left: 350px;
         margin-right: 350px;
     }
