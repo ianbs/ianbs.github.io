@@ -43,7 +43,8 @@ main {
 	font-size: 10px;
 }
 
-.container h1 {
+.container h1,
+h5 {
 	color: #042734;
 	align-self: center;
 }
