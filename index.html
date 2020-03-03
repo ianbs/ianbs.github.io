@@ -1,56 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel='shortcut icon' type='image/x-icon' href='https://avatars1.githubusercontent.com/u/25992044?s=460&v=4'/>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="css/main.css">
-
-    <title>Ian B. S.</title>
-</head>
-<body>
-    <div class="wrapper">
-        <header class="header">
-            <nav>
-                <div class="nav-wrapper">
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                    <ul class="left hide-on-med-and-down">
-                        <li class="act"><a href="index.html"><i class="material-icons">home</i> Home</a></li>
-                        <li><a href="projects.html"><i class="material-icons">code</i> Projects</a></li>
-                        <li><a href="contact.html"><i class="material-icons">contacts</i> Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
-            <ul class="sidenav" id="mobile-demo">
-                <li><a class="sidenav-close" href="#!"><i class="material-icons left">close</i></a></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <h1>Ian B. S.</h1>
-            <img src="https://avatars1.githubusercontent.com/u/25992044?s=460&v=4" alt="Ian">
-        </header>
-        <main class="content container" role="feed">
-            <div class="row">
-                <div class="col">
-                    <div class="card-panel">
-                        <p>Acadêmico de <em>Sistemas de Informação</em> .</p>
-                        <p>Desenvolvedor <em>Python</em>, <em>Java</em> e <em>JavaScript</em> .</p>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <footer class="footer" >
-            Copyright &copy; Ian Barbosa Santos.
-        </footer>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ian B. S.</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+			integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		<main>
+			<div class="container">
+				<img src="images/perfil.jpg" alt="Perfil" />
+				<h1>
+					<span class="small">Hi my name is</span> Ian B. S.
+					<span class="small">and i am a developer</span>
+				</h1>
+				<div class="myProgress">
+					<div id="python">Python</div>
+				</div>
+				<div class="myProgress">
+					<div id="javascript">JavaScript</div>
+				</div>
+				<div class="myProgress">
+					<div id="csharp">C#</div>
+				</div>
+				<div class="myProgress">
+					<div id="java">JAVA</div>
+				</div>
+				<div class="container-btn">
+					<button id="modalProj">Projects</button>
+					<button id="modelCont">Contact</button>
+				</div>
+			</div>
+		</main>
+		<!-- The Modal -->
+		<div id="modalPj" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content" ng-app="myApp" ng-controller="myCtrl">
+				<span class="close">&times;</span>
+				<div id="projects"></div>
+			</div>
+		</div>
+		<div id="modalConts" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close2">&times;</span>
+				<div class="contato">
+					<h1>Contact</h1>
+					<div class="conts">
+						<a class="ct" href="https://www.instagram.com/ian_bs_/">
+							<i class="fab fa-instagram"></i>
+							<p>Instagram</p>
+						</a>
+						<a class="ct" href="https://www.linkedin.com/in/ianbarbosasantos">
+							<i class="fab fa-linkedin"></i>
+							<p>LinkedIn</p>
+						</a>
+						<a class="ct" href="https://github.com/ianbs">
+							<i class="fab fa-github-alt"></i>
+							<p>Github</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"
+	></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/projects.js"></script>
 </html>
