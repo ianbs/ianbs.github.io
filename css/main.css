@@ -7,6 +7,7 @@ body {
 	margin: 0;
 	font-family: "Fira Code";
 	background-color: #042734;
+	color: #fefefe;
 }
 
 main {
@@ -45,7 +46,7 @@ main {
 
 .container h1,
 h5 {
-	color: #042734;
+	color: #FEFEFE;
 	align-self: center;
 }
 
