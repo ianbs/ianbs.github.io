@@ -200,22 +200,22 @@ a {
 	color: #042734;
 }
 
-.conts {
+/* .conts {
 	display: flex;
 	flex-direction: row;
 	text-align: center;
 	margin-bottom: 50px;
-}
+} */
 
 .contato h1 {
 	text-align: center;
-	margin-bottom: 50px;
+	margin-bottom: 1em;
 }
 
 .conts .ct {
-	height: 200px;
-	width: 300px;
-	color: #042734;
+	height: 20px;
+	width: 20px;
+	color: #fefefe;
 	margin-left: auto;
 	margin-right: auto;
 	align-self: center;
@@ -224,10 +224,10 @@ a {
 }
 
 .conts .ct p {
-	font-size: 1.2rem;
+	font-size: 1rem;
 	margin-bottom: 1rem;
 }
 
 .fab {
-	font-size: 10rem;
+	font-size: 1.5rem;
 }
