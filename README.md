@@ -1,79 +1,66 @@
 # ianbs.github.io
 
-Site pessoal de **curriculo online** para apresentar perfil profissional, conhecimentos, certificacoes e projetos publicos.
+Portfólio profissional de Ian Barbosa Santos, publicado em [ianbs.github.io](https://ianbs.github.io). O site apresenta o foco atual em desenvolvimento full-stack e engenharia de software, uma seleção curada de projetos e canais profissionais de contato.
 
-## Visao geral
+## Stack
 
-Este projeto foi construido como uma pagina unica (single-page) com foco em:
+- Next.js 16 com App Router e Static Export
+- React 19
+- TypeScript em modo estrito
+- Tailwind CSS 4
+- GitHub Actions e GitHub Pages
 
-- apresentar experiencia profissional de forma objetiva;
-- mostrar conhecimentos tecnicos por area;
-- listar projetos recentes do GitHub automaticamente;
-- oferecer versao em portugues e ingles com troca de idioma no front-end.
+O projeto evita dependências de interface desnecessárias. Tema, idioma e ícones são implementados com React, CSS e recursos nativos do navegador.
 
-## Funcionalidades
+## Requisitos
 
-- Tema escuro responsivo (desktop e mobile).
-- Seletor de idioma `PT/EN` com persistencia em `localStorage`.
-- Secao de projetos populada via API publica do GitHub.
-- Animacoes leves de entrada nas secoes.
-- Links diretos para contato (email, LinkedIn, GitHub, Instagram).
+- Node.js 22 ou superior
+- pnpm 11.19.0
 
-## Tecnologias utilizadas
-
-- HTML5
-- CSS3
-- JavaScript (vanilla)
-- Font Awesome (icones locais em `libs/fontawesome`)
-- GitHub API (repositorios publicos)
-
-## Estrutura do projeto
-
-```text
-.
-├── index.html
-├── css/
-│   └── main.css
-├── js/
-│   ├── main.js
-│   └── projects.js
-├── images/
-└── libs/
-```
-
-## Como executar localmente
-
-Opcao 1: abrir o `index.html` direto no navegador.
-
-Opcao 2: subir um servidor local (recomendado):
+## Instalação
 
 ```bash
-python3 -m http.server 8000
+pnpm install
+pnpm dev
 ```
 
-Depois acesse: `http://localhost:8000`
+Abra `http://localhost:3000`.
 
-## Personalizacao
+## Comandos
 
-### 1) Conteudo da pagina
+```bash
+pnpm dev        # servidor de desenvolvimento
+pnpm lint       # análise estática com ESLint
+pnpm typecheck  # verificação do TypeScript sem emitir arquivos
+pnpm build      # build e export estático para out/
+```
 
-- Estrutura e secoes: `index.html`
-- Textos com traducao PT/EN: `js/main.js` (objeto `TRANSLATIONS`)
+## Estrutura
 
-### 2) Tema e layout
+```text
+app/          rotas, metadata, sitemap, robots e estilos globais
+components/   layout, seções e elementos de interface
+content/      conteúdo equivalente em português e inglês
+data/         seleção tipada de projetos
+lib/          dados compartilhados do site
+public/       foto, favicon e arquivos públicos
+```
 
-- Cores, espacamentos, cards e responsividade: `css/main.css`
+Os projetos são curados em `data/projects.ts`; não há chamada à API do GitHub durante a navegação. Os textos ficam em objetos tipados dentro de `content/`.
 
-### 3) Projetos exibidos
+## Build estático
 
-- Integracao com GitHub: `js/projects.js`
-- Para trocar o usuario exibido, altere a URL:
-  - `https://api.github.com/users/<usuario>/repos?...`
+`next.config.ts` define `output: "export"` e desativa a otimização dinâmica de imagens, que não está disponível no GitHub Pages. O build produz o diretório `out/` completo, incluindo `robots.txt` e `sitemap.xml`.
 
-## Publicacao
+Como este é um site de usuário (`ianbs.github.io`), não existe `basePath` de repositório.
 
-Este repositorio pode ser publicado diretamente com **GitHub Pages**.
+## Deploy
 
-## Licenca
+O workflow `.github/workflows/deploy.yml` é executado em pushes para `master` e também pode ser iniciado manualmente. Ele:
 
-Uso pessoal.
+1. instala as dependências com lockfile congelado;
+2. executa lint e typecheck;
+3. gera o export estático;
+4. publica `out/` com as ações oficiais do GitHub Pages.
+
+No repositório do GitHub, a fonte do Pages deve estar configurada como **GitHub Actions**.
