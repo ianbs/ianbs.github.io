@@ -103,5 +103,16 @@ export const pt = {
     description: "Para oportunidades profissionais, colaboração técnica ou uma conversa sobre projetos, envie um email ou fale comigo pelos canais abaixo.",
     email: "Enviar email",
   },
+  cv: {
+    documentTitle: "Currículo — Ian Barbosa Santos",
+    download: "Currículo (PDF)",
+    summary: "Resumo",
+    experience: "Experiência profissional",
+    projects: "Projetos",
+    skills: "Competências técnicas",
+    education: "Formação acadêmica",
+    certifications: "Certificações",
+    languages: "Idiomas",
+  },
   footer: "Projetado e desenvolvido por Ian Barbosa Santos.",
 } as const satisfies Content;

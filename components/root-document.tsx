@@ -4,12 +4,12 @@ import { languageStorageKey, themeStorageKey } from "@/lib/preferences";
 import { site } from "@/lib/site";
 import "@/app/globals.css";
 
-// Runs before first paint: applies the stored theme and, only on the Portuguese home page,
+// Runs before first paint: applies the stored theme and, only on the Portuguese home page ("/"),
 // honours a language the visitor explicitly chose before. Direct links to /en/ are never redirected,
 // and nothing is inferred from navigator.language so crawlers always index both versions.
 export function preferenceScript({ redirectToStoredLanguage }: { readonly redirectToStoredLanguage: boolean }) {
   const redirect = redirectToStoredLanguage
-    ? `if (localStorage.getItem(${JSON.stringify(languageStorageKey)}) === "en") { location.replace(${JSON.stringify(en.meta.path)} + location.hash); return; }`
+    ? `if (location.pathname === "/" && localStorage.getItem(${JSON.stringify(languageStorageKey)}) === "en") { location.replace(${JSON.stringify(en.meta.path)} + location.hash); return; }`
     : "";
   return `(() => {
   try {

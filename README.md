@@ -46,7 +46,22 @@ pnpm dev        # servidor de desenvolvimento
 pnpm lint       # análise estática com ESLint
 pnpm typecheck  # verificação do TypeScript sem emitir arquivos
 pnpm build      # build e export estático para out/
+pnpm cv         # build + gera os currículos em PDF em public/cv/
 ```
+
+## Currículo em PDF
+
+Os currículos (`public/cv/ian-barbosa-santos-curriculo.pdf` e `public/cv/ian-barbosa-santos-resume.pdf`) são gerados a partir dos mesmos dados do site: `data/experience.ts`, `data/projects.ts` e `data/cv.ts` (resumo, competências e idiomas). As páginas de origem são `/curriculo/` e `/en/resume/`, marcadas como `noindex`.
+
+Sempre que esses dados mudarem:
+
+```bash
+pnpm exec playwright install chromium   # só na primeira vez
+pnpm cv
+git add public/cv
+```
+
+Os PDFs são versionados, e o deploy só copia os arquivos. Por isso, **rode `pnpm cv` antes do commit**, senão o PDF fica diferente do site. Para usar um Chromium já instalado, defina `CHROMIUM_PATH`.
 
 ## Estrutura
 
@@ -55,6 +70,7 @@ app/          rotas por idioma, 404, imagens OG, sitemap, robots e estilos globa
 components/   layout, seções e elementos de interface
 content/      conteúdo equivalente em português e inglês
 data/         seleção tipada e bilíngue de projetos (fonte única dos textos dos projetos)
+scripts/      geração dos PDFs do currículo
 lib/          dados do site, metadata, imagem OG e chaves de preferência
 public/       foto, favicon e arquivos públicos
 ```

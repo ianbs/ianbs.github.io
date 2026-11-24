@@ -103,5 +103,16 @@ export const en = {
     description: "For professional opportunities, technical collaboration, or a conversation about projects, send an email or reach me through the channels below.",
     email: "Send email",
   },
+  cv: {
+    documentTitle: "Résumé — Ian Barbosa Santos",
+    download: "Résumé (PDF)",
+    summary: "Summary",
+    experience: "Professional experience",
+    projects: "Projects",
+    skills: "Technical skills",
+    education: "Education",
+    certifications: "Certifications",
+    languages: "Languages",
+  },
   footer: "Designed and developed by Ian Barbosa Santos.",
 } as const satisfies Content;

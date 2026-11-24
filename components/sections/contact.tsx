@@ -1,5 +1,6 @@
 import type { Content } from "@/content/types";
-import { ArrowUpRightIcon, GithubIcon, LinkedinIcon, MailIcon } from "@/components/ui/icons";
+import { ArrowUpRightIcon, DownloadIcon, GithubIcon, LinkedinIcon, MailIcon } from "@/components/ui/icons";
+import { cvFiles } from "@/data/cv";
 import { site } from "@/lib/site";
 
 export function Contact({ content }: { readonly content: Content }) {
@@ -15,6 +16,7 @@ export function Contact({ content }: { readonly content: Content }) {
           <a className="button button-inverse" href={`mailto:${site.email}`}><MailIcon />{content.contact.email}</a>
           <a href={site.github} target="_blank" rel="noopener noreferrer"><GithubIcon />GitHub<ArrowUpRightIcon /></a>
           <a href={site.linkedin} target="_blank" rel="noopener noreferrer"><LinkedinIcon />LinkedIn<ArrowUpRightIcon /></a>
+          <a href={cvFiles[content.languageCode].pdf} download><DownloadIcon />{content.cv.download}</a>
         </div>
       </div>
     </section>

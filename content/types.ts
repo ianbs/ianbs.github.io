@@ -86,5 +86,16 @@ export type Content = {
     readonly description: string;
     readonly email: string;
   };
+  readonly cv: {
+    readonly documentTitle: string;
+    readonly download: string;
+    readonly summary: string;
+    readonly experience: string;
+    readonly projects: string;
+    readonly skills: string;
+    readonly education: string;
+    readonly certifications: string;
+    readonly languages: string;
+  };
   readonly footer: string;
 };
