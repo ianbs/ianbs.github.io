@@ -1,33 +1,44 @@
-export type LocalizedText = {
-  readonly pt: string;
-  readonly en: string;
+export type Language = "pt" | "en";
+
+export type LocalizedText = Readonly<Record<Language, string>>;
+
+export type ProjectRepository = {
+  /** Distinguishes repositories when a project has more than one (e.g. API and front-end). */
+  readonly label?: string;
+  readonly url: string;
 };
 
 export type Project = {
   readonly name: string;
   readonly description: LocalizedText;
   readonly stack: readonly string[];
-  readonly repository: string;
+  readonly repositories: readonly ProjectRepository[];
   readonly demo?: string;
 };
 
-export const featuredProject: Project = {
+export type FeaturedProject = Project & {
+  readonly title: LocalizedText;
+  readonly highlights: readonly LocalizedText[];
+};
+
+export const featuredProject: FeaturedProject = {
   name: "events-photos",
-  description: {
-    pt: "Galeria mobile-first para eventos, com uploads e leituras assinados, autorização no servidor, Storage privado e políticas RLS testadas.",
-    en: "A mobile-first event gallery with signed uploads and reads, server-side authorization, private storage, and tested RLS policies.",
+  title: {
+    pt: "Compartilhamento seguro de fotos para eventos",
+    en: "Secure event photo sharing",
   },
-  stack: [
-    "Next.js 16",
-    "React 19",
-    "TypeScript",
-    "Supabase",
-    "PostgreSQL",
-    "Vitest",
-    "pgTAP",
-    "Docker",
+  description: {
+    pt: "Uma aplicação mobile-first em que convidados enviam e acessam suas fotos, enquanto administradores gerenciam o acervo com controles de acesso explícitos.",
+    en: "A mobile-first application where guests upload and access their photos while administrators manage the collection through explicit access controls.",
+  },
+  highlights: [
+    { pt: "Autorização no servidor e Storage privado", en: "Server-side authorization and private storage" },
+    { pt: "URLs assinadas e validação real de arquivos", en: "Signed URLs and real file validation" },
+    { pt: "RLS, migrations e testes de políticas", en: "RLS, migrations, and policy tests" },
+    { pt: "Separação entre UI, domínio e infraestrutura", en: "Separation of UI, domain, and infrastructure" },
   ],
-  repository: "https://github.com/ianbs/events-photos",
+  stack: ["Next.js 16", "React 19", "TypeScript", "Supabase", "PostgreSQL", "Vitest", "pgTAP", "Docker"],
+  repositories: [{ url: "https://github.com/ianbs/events-photos" }],
   demo: "https://events-photos.vercel.app",
 };
 
@@ -39,33 +50,18 @@ export const projects: readonly Project[] = [
       en: "A clinical management API built with NestJS and PostgreSQL, including JWT authentication, permissions, validation, and appointment modules.",
     },
     stack: ["NestJS", "TypeScript", "PostgreSQL", "JWT", "Docker"],
-    repository: "https://github.com/ianbs/sgcc",
+    repositories: [{ url: "https://github.com/ianbs/sgcc" }],
   },
   {
     name: "projetointegrado-ianbs",
     description: {
-      pt: "Backend de um sistema de gestão clínica desenvolvido em Spring Boot, com PostgreSQL, JPA, segurança JWT e APIs REST.",
-      en: "Backend for a clinical management system built with Spring Boot, PostgreSQL, JPA, JWT security, and REST APIs.",
+      pt: "Sistema de gestão clínica completo: backend em Spring Boot com PostgreSQL, JPA, segurança JWT e APIs REST, e interface Next.js com autenticação, agenda e fluxos de cadastro e atendimento.",
+      en: "A complete clinical management system: a Spring Boot backend with PostgreSQL, JPA, JWT security, and REST APIs, plus a Next.js interface with authentication, scheduling, registration, and care workflows.",
     },
-    stack: ["Java", "Spring Boot", "PostgreSQL", "JPA", "JWT"],
-    repository: "https://github.com/ianbs/projetointegrado-ianbs",
+    stack: ["Java", "Spring Boot", "PostgreSQL", "JPA", "JWT", "Next.js", "React"],
+    repositories: [
+      { label: "API", url: "https://github.com/ianbs/projetointegrado-ianbs" },
+      { label: "Front-end", url: "https://github.com/ianbs/projetointegrado-ianbs-front" },
+    ],
   },
-  {
-    name: "projetointegrado-ianbs-front",
-    description: {
-      pt: "Interface Next.js para o sistema de gestão clínica, com autenticação, agenda e fluxos de cadastro e atendimento.",
-      en: "A Next.js interface for the clinical management system, with authentication, scheduling, registration, and care workflows.",
-    },
-    stack: ["Next.js", "React", "JavaScript", "styled-components"],
-    repository: "https://github.com/ianbs/projetointegrado-ianbs-front",
-  },
-  {
-    name: "python-backup",
-    description: {
-      pt: "Aplicação desktop para cópia de arquivos e pastas, criada em Python com interface gráfica Qt.",
-      en: "A desktop application for copying files and folders, built in Python with a Qt graphical interface.",
-    },
-    stack: ["Python", "Qt"],
-    repository: "https://github.com/ianbs/python-backup",
-  },
-] as const;
+];

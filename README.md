@@ -12,6 +12,19 @@ Portfólio profissional de Ian Barbosa Santos, publicado em [ianbs.github.io](ht
 
 O projeto evita dependências de interface desnecessárias. Tema, idioma e ícones são implementados com React, CSS e recursos nativos do navegador.
 
+## Idiomas
+
+Cada idioma é uma página estática própria, com HTML, `lang`, título, descrição e imagem de compartilhamento próprios:
+
+- `/` — português (`app/(pt)/`)
+- `/en/` — inglês (`app/(en)/en/`)
+
+As páginas se referenciam com `hreflang` (português como `x-default`), e o `sitemap.xml` lista as duas. O botão de idioma é um link comum. A escolha fica salva no navegador, e quem escolheu inglês e volta para `/` é levado a `/en/`. O site não redireciona a partir do idioma do navegador, para que os buscadores sempre indexem as duas versões. Links diretos para `/en/` nunca são redirecionados.
+
+Como há um layout raiz por idioma, a página 404 usa `app/global-not-found.tsx`, que exige `experimental.globalNotFound` em `next.config.ts`.
+
+As imagens de compartilhamento (1200×630) são geradas no build por `app/og/<idioma>.png/route.tsx` a partir de `lib/og-image.tsx`.
+
 ## Requisitos
 
 - Node.js 22 ou superior
@@ -33,16 +46,32 @@ pnpm dev        # servidor de desenvolvimento
 pnpm lint       # análise estática com ESLint
 pnpm typecheck  # verificação do TypeScript sem emitir arquivos
 pnpm build      # build e export estático para out/
+pnpm cv         # build + gera os currículos em PDF em public/cv/
 ```
+
+## Currículo em PDF
+
+Os currículos (`public/cv/ian-barbosa-santos-curriculo.pdf` e `public/cv/ian-barbosa-santos-resume.pdf`) são gerados a partir dos mesmos dados do site: `data/experience.ts`, `data/projects.ts` e `data/cv.ts` (resumo, competências e idiomas). As páginas de origem são `/curriculo/` e `/en/resume/`, marcadas como `noindex`.
+
+Sempre que esses dados mudarem:
+
+```bash
+pnpm exec playwright install chromium   # só na primeira vez
+pnpm cv
+git add public/cv
+```
+
+Os PDFs são versionados, e o deploy só copia os arquivos. Por isso, **rode `pnpm cv` antes do commit**, senão o PDF fica diferente do site. Para usar um Chromium já instalado, defina `CHROMIUM_PATH`.
 
 ## Estrutura
 
 ```text
-app/          rotas, metadata, sitemap, robots e estilos globais
+app/          rotas por idioma, 404, imagens OG, sitemap, robots e estilos globais
 components/   layout, seções e elementos de interface
 content/      conteúdo equivalente em português e inglês
-data/         seleção tipada de projetos
-lib/          dados compartilhados do site
+data/         seleção tipada e bilíngue de projetos (fonte única dos textos dos projetos)
+scripts/      geração dos PDFs do currículo
+lib/          dados do site, metadata, imagem OG e chaves de preferência
 public/       foto, favicon e arquivos públicos
 ```
 

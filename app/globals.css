@@ -198,7 +198,11 @@ button {
 }
 
 .language-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 2.5rem;
+  text-decoration: none;
   padding-inline: 0.65rem;
   cursor: pointer;
   font-size: 0.73rem;
@@ -323,7 +327,7 @@ button {
 
 .button svg,
 .project-actions svg,
-.project-card > div > a svg,
+.project-card-links a svg,
 .contact-actions svg,
 .social-links svg {
   width: 1rem;
@@ -494,13 +498,12 @@ button {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 3.5rem;
 }
 
 .skill-group {
-  min-height: 310px;
   border: 1px solid var(--line);
   border-radius: 1rem;
   padding: 1.5rem;
@@ -614,7 +617,7 @@ button {
 }
 
 .project-actions a,
-.project-card > div > a,
+.project-card-links a,
 .contact-actions > a:not(.button) {
   display: inline-flex;
   align-items: center;
@@ -626,8 +629,14 @@ button {
 }
 
 .project-actions a:hover,
-.project-card > div > a:hover {
+.project-card-links a:hover {
   color: var(--accent-hover);
+}
+
+.project-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
 }
 
 .engineering-panel {
@@ -704,38 +713,130 @@ button {
   margin-bottom: 1.5rem;
 }
 
-.certification-card {
-  display: flex;
-  max-width: 700px;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-top: 3rem;
+.timeline {
+  margin: 3.5rem 0 0;
+  padding: 0;
+  list-style: none;
   border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding-block: 1.5rem;
 }
 
-.certification-card > span {
+.timeline-item {
   display: grid;
-  width: 2rem;
-  height: 2rem;
+  grid-template-columns: minmax(180px, 0.32fr) minmax(0, 1fr);
+  gap: 2rem;
+  padding-block: 2.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline-meta p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.88rem;
+}
+
+.timeline-meta .timeline-period {
+  margin-bottom: 0.3rem;
+  color: var(--accent-text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+}
+
+.timeline-body h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 720;
+  letter-spacing: -0.025em;
+}
+
+.timeline-roles {
+  margin: 0.35rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.timeline-roles strong {
+  color: var(--text);
+  font-weight: 650;
+}
+
+.timeline-highlights {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 760px;
+  margin: 1.2rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--text-soft);
+  line-height: 1.65;
+  list-style: disc;
+}
+
+.timeline-highlights li::marker {
+  color: var(--accent);
+}
+
+.timeline-body .tag-list {
+  margin-top: 1.3rem;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 6vw, 5rem);
+  margin-top: 3.5rem;
+}
+
+.education-label {
+  margin: 0 0 0.5rem;
+  color: var(--accent-text);
+  font-size: 0.75rem;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.education-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.education-list > li {
+  border-bottom: 1px solid var(--line);
+  padding-block: 1.25rem;
+}
+
+.education-list h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 680;
+  letter-spacing: -0.015em;
+}
+
+.education-list p {
+  margin: 0.3rem 0 0;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+.certification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.certification-item > span {
+  display: grid;
+  width: 1.6rem;
+  height: 1.6rem;
   flex: 0 0 auto;
   place-items: center;
   border-radius: 50%;
   color: white;
   background: #1f5eff;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 800;
-}
-
-.certification-card h3 {
-  margin: 0;
-  font-size: 1.1rem;
-}
-
-.certification-card p {
-  margin: 0.3rem 0 0;
-  color: var(--text-soft);
 }
 
 .contact-section {
@@ -807,7 +908,8 @@ button {
   text-underline-offset: 0.25rem;
 }
 
-@media (max-width: 960px) {
+/* The six-item desktop nav needs ~1100px; below that use the menu button. */
+@media (max-width: 1100px) {
   .desktop-nav {
     display: none;
   }
@@ -858,19 +960,12 @@ button {
   .mobile-nav nav a + a {
     border-top: 1px solid var(--line);
   }
+}
 
+@media (max-width: 960px) {
   .hero {
     grid-template-columns: minmax(0, 1.4fr) minmax(230px, 0.6fr);
     gap: 3rem;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .skill-group:last-child {
-    grid-column: 1 / -1;
-    min-height: auto;
   }
 
   .featured-project,
@@ -889,6 +984,15 @@ button {
 }
 
 @media (max-width: 720px) {
+  .timeline-item,
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    gap: 0.9rem;
+  }
+
   .container {
     width: min(calc(100% - 2rem), var(--max-width));
   }
@@ -937,12 +1041,6 @@ button {
   .about-copy,
   .projects-heading {
     gap: 1.25rem;
-  }
-
-  .skill-group,
-  .skill-group:last-child {
-    grid-column: auto;
-    min-height: auto;
   }
 
   .featured-project {
@@ -998,4 +1096,23 @@ button {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.not-found {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.not-found h1 {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.not-found > p:not(.eyebrow) {
+  color: var(--text-soft);
 }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Content } from "@/content/types";
-import { ArrowUpRightIcon, GithubIcon, LinkedinIcon } from "@/components/ui/icons";
+import { ArrowUpRightIcon, DownloadIcon, GithubIcon, LinkedinIcon } from "@/components/ui/icons";
+import { cvFiles } from "@/data/cv";
 import { site } from "@/lib/site";
 
 export function Hero({ content }: { readonly content: Content }) {
@@ -17,9 +18,10 @@ export function Hero({ content }: { readonly content: Content }) {
           </a>
           <a className="button button-secondary" href={`mailto:${site.email}`}>{content.hero.contactCta}</a>
         </div>
-        <div className="social-links" aria-label="Social links">
+        <div className="social-links" aria-label={content.a11y.socialLinks}>
           <a href={site.github} target="_blank" rel="noopener noreferrer"><GithubIcon />GitHub</a>
           <a href={site.linkedin} target="_blank" rel="noopener noreferrer"><LinkedinIcon />LinkedIn</a>
+          <a href={cvFiles[content.languageCode].pdf} download><DownloadIcon />{content.cv.download}</a>
         </div>
       </div>
       <aside className="profile-card" aria-label={content.hero.lensLabel}>

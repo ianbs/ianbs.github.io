@@ -2,6 +2,24 @@ export type Content = {
   readonly languageName: string;
   readonly languageCode: "pt" | "en";
   readonly switchLanguage: string;
+  readonly alternatePath: string;
+  readonly meta: {
+    readonly htmlLang: string;
+    readonly path: string;
+    readonly ogLocale: string;
+    readonly alternateOgLocale: string;
+    readonly title: string;
+    readonly description: string;
+    readonly ogImageAlt: string;
+  };
+  readonly a11y: {
+    readonly skipLink: string;
+    readonly home: string;
+    readonly primaryNav: string;
+    readonly mobileNav: string;
+    readonly socialLinks: string;
+    readonly backToTop: string;
+  };
   readonly theme: {
     readonly label: string;
     readonly light: string;
@@ -11,9 +29,10 @@ export type Content = {
   readonly nav: {
     readonly menu: string;
     readonly about: string;
+    readonly experience: string;
     readonly skills: string;
     readonly projects: string;
-    readonly certifications: string;
+    readonly education: string;
     readonly contact: string;
   };
   readonly hero: {
@@ -44,25 +63,39 @@ export type Content = {
     readonly title: string;
     readonly intro: string;
     readonly featuredLabel: string;
-    readonly featuredTitle: string;
-    readonly featuredDescription: string;
     readonly engineeringLabel: string;
-    readonly engineeringPoints: readonly string[];
     readonly selectedTitle: string;
     readonly repository: string;
     readonly demo: string;
   };
-  readonly certifications: {
+  readonly experience: {
     readonly eyebrow: string;
     readonly title: string;
-    readonly item: string;
-    readonly description: string;
+    readonly intro: string;
+    readonly present: string;
+  };
+  readonly education: {
+    readonly eyebrow: string;
+    readonly title: string;
+    readonly educationLabel: string;
+    readonly certificationsLabel: string;
   };
   readonly contact: {
     readonly eyebrow: string;
     readonly title: string;
     readonly description: string;
     readonly email: string;
+  };
+  readonly cv: {
+    readonly documentTitle: string;
+    readonly download: string;
+    readonly summary: string;
+    readonly experience: string;
+    readonly projects: string;
+    readonly skills: string;
+    readonly education: string;
+    readonly certifications: string;
+    readonly languages: string;
   };
   readonly footer: string;
 };

@@ -3,7 +3,26 @@ import type { Content } from "./types";
 export const en = {
   languageName: "English",
   languageCode: "en",
-  switchLanguage: "Mudar idioma para português",
+  switchLanguage: "Switch language to Portuguese",
+  alternatePath: "/",
+  meta: {
+    htmlLang: "en",
+    path: "/en/",
+    ogLocale: "en_US",
+    alternateOgLocale: "pt_BR",
+    title: "Ian Barbosa Santos | Full-stack Developer & Software Engineer",
+    description:
+      "Full-stack development with Laravel, SQL, Python, Node.js, TypeScript, and Next.js: backend architecture, secure APIs, data analysis, and web applications.",
+    ogImageAlt: "Ian Barbosa Santos — Full-stack Developer and Software Engineer",
+  },
+  a11y: {
+    skipLink: "Skip to content",
+    home: "Ian Barbosa Santos — home",
+    primaryNav: "Main",
+    mobileNav: "Mobile navigation",
+    socialLinks: "Professional profiles",
+    backToTop: "Back to top",
+  },
   theme: {
     label: "Theme",
     light: "Light",
@@ -13,16 +32,17 @@ export const en = {
   nav: {
     menu: "Open navigation",
     about: "About",
+    experience: "Experience",
     skills: "Stack",
     projects: "Projects",
-    certifications: "Certifications",
+    education: "Education",
     contact: "Contact",
   },
   hero: {
     eyebrow: "Full-stack Developer · Software Engineer",
     role: "I build secure web applications, APIs, and reliable systems.",
     description:
-      "I work with TypeScript, Next.js, Node.js, and PostgreSQL, with particular attention to backend architecture, application security, and software quality.",
+      "Today I work with Laravel, SQL, Python, and Node.js, data analysis with Pentaho, and DigitalOcean cloud infrastructure. In recent projects I use TypeScript and Next.js, always with close attention to backend architecture, security, and software quality.",
     primaryCta: "View projects",
     contactCta: "Get in touch",
     profileAlt: "Ian Barbosa Santos seated in an indoor setting",
@@ -42,16 +62,20 @@ export const en = {
     title: "Technology chosen with purpose.",
     groups: [
       {
-        title: "Current stack",
-        items: ["TypeScript", "Next.js", "React", "Node.js", "PostgreSQL", "Supabase", "Docker"],
+        title: "Day to day",
+        items: ["Laravel", "PHP", "SQL", "Python", "Node.js", "React", "DigitalOcean", "Linux / Windows Server", "Proxmox", "GLPI / ITIL 4"],
+      },
+      {
+        title: "Data and BI",
+        items: ["Data analysis", "Pentaho", "Power BI", "Oracle SQL", "PostgreSQL", "MySQL"],
+      },
+      {
+        title: "Recent projects",
+        items: ["TypeScript", "Next.js", "React", "Supabase", "PostgreSQL", "NestJS", "Docker", "Vitest"],
       },
       {
         title: "Engineering",
         items: ["API design", "Authentication and authorization", "Application security", "Relational databases", "Testing", "CI/CD", "Observability"],
-      },
-      {
-        title: "Previous experience",
-        items: ["NestJS", "Java / Spring", "Python / Flask", "Go", "Data Science", "Cloud / IT Operations"],
       },
     ],
   },
@@ -60,31 +84,39 @@ export const en = {
     title: "Projects that show how I build.",
     intro: "A curated selection of public applications and studies, led by my most recent and complete project.",
     featuredLabel: "Featured project",
-    featuredTitle: "Secure event photo sharing",
-    featuredDescription:
-      "A mobile-first application where guests upload and access their photos while administrators manage the collection through explicit access controls.",
     engineeringLabel: "What it demonstrates",
-    engineeringPoints: [
-      "Server-side authorization and private storage",
-      "Signed URLs and real file validation",
-      "RLS, migrations, and policy tests",
-      "Separation of UI, domain, and infrastructure",
-    ],
     selectedTitle: "Other projects",
     repository: "Repository",
     demo: "View application",
   },
-  certifications: {
-    eyebrow: "Certifications",
-    title: "Professional foundation.",
-    item: "ITIL 4 Foundation",
-    description: "Foundations in IT service management and value delivery.",
+  experience: {
+    eyebrow: "Experience",
+    title: "Real systems, in production.",
+    intro: "{years}+ years across development, support of critical systems, data, and infrastructure.",
+    present: "Present",
+  },
+  education: {
+    eyebrow: "Education",
+    title: "Academic background and certifications.",
+    educationLabel: "Education",
+    certificationsLabel: "Certifications",
   },
   contact: {
     eyebrow: "Contact",
     title: "Let’s talk about software.",
     description: "For professional opportunities, technical collaboration, or a conversation about projects, send an email or reach me through the channels below.",
     email: "Send email",
+  },
+  cv: {
+    documentTitle: "Résumé — Ian Barbosa Santos",
+    download: "Résumé (PDF)",
+    summary: "Summary",
+    experience: "Professional experience",
+    projects: "Projects",
+    skills: "Technical skills",
+    education: "Education",
+    certifications: "Certifications",
+    languages: "Languages",
   },
   footer: "Designed and developed by Ian Barbosa Santos.",
 } as const satisfies Content;
