@@ -4,6 +4,25 @@ export const pt = {
   languageName: "Português",
   languageCode: "pt",
   switchLanguage: "Mudar idioma para inglês",
+  alternatePath: "/en/",
+  meta: {
+    htmlLang: "pt-BR",
+    path: "/",
+    ogLocale: "pt_BR",
+    alternateOgLocale: "en_US",
+    title: "Ian Barbosa Santos | Desenvolvedor Full-stack e Engenheiro de Software",
+    description:
+      "Desenvolvimento full-stack com TypeScript, Next.js, Node.js e PostgreSQL: arquitetura de backend, APIs seguras e aplicações web modernas.",
+    ogImageAlt: "Ian Barbosa Santos — Desenvolvedor Full-stack e Engenheiro de Software",
+  },
+  a11y: {
+    skipLink: "Pular para o conteúdo",
+    home: "Ian Barbosa Santos — início",
+    primaryNav: "Principal",
+    mobileNav: "Navegação móvel",
+    socialLinks: "Redes profissionais",
+    backToTop: "Voltar ao topo",
+  },
   theme: {
     label: "Tema",
     light: "Claro",
@@ -60,16 +79,7 @@ export const pt = {
     title: "Projetos que mostram como eu construo.",
     intro: "Uma seleção curada de aplicações e estudos públicos — com o projeto mais recente e completo em destaque.",
     featuredLabel: "Projeto em destaque",
-    featuredTitle: "Compartilhamento seguro de fotos para eventos",
-    featuredDescription:
-      "Uma aplicação mobile-first em que convidados enviam e acessam suas fotos, enquanto administradores gerenciam o acervo com controles de acesso explícitos.",
     engineeringLabel: "O que demonstra",
-    engineeringPoints: [
-      "Autorização no servidor e Storage privado",
-      "URLs assinadas e validação real de arquivos",
-      "RLS, migrations e testes de políticas",
-      "Separação entre UI, domínio e infraestrutura",
-    ],
     selectedTitle: "Outros projetos",
     repository: "Repositório",
     demo: "Ver aplicação",

@@ -2,6 +2,24 @@ export type Content = {
   readonly languageName: string;
   readonly languageCode: "pt" | "en";
   readonly switchLanguage: string;
+  readonly alternatePath: string;
+  readonly meta: {
+    readonly htmlLang: string;
+    readonly path: string;
+    readonly ogLocale: string;
+    readonly alternateOgLocale: string;
+    readonly title: string;
+    readonly description: string;
+    readonly ogImageAlt: string;
+  };
+  readonly a11y: {
+    readonly skipLink: string;
+    readonly home: string;
+    readonly primaryNav: string;
+    readonly mobileNav: string;
+    readonly socialLinks: string;
+    readonly backToTop: string;
+  };
   readonly theme: {
     readonly label: string;
     readonly light: string;
@@ -44,10 +62,7 @@ export type Content = {
     readonly title: string;
     readonly intro: string;
     readonly featuredLabel: string;
-    readonly featuredTitle: string;
-    readonly featuredDescription: string;
     readonly engineeringLabel: string;
-    readonly engineeringPoints: readonly string[];
     readonly selectedTitle: string;
     readonly repository: string;
     readonly demo: string;

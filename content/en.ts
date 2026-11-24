@@ -3,7 +3,26 @@ import type { Content } from "./types";
 export const en = {
   languageName: "English",
   languageCode: "en",
-  switchLanguage: "Mudar idioma para português",
+  switchLanguage: "Switch language to Portuguese",
+  alternatePath: "/",
+  meta: {
+    htmlLang: "en",
+    path: "/en/",
+    ogLocale: "en_US",
+    alternateOgLocale: "pt_BR",
+    title: "Ian Barbosa Santos | Full-stack Developer & Software Engineer",
+    description:
+      "Full-stack development with TypeScript, Next.js, Node.js, and PostgreSQL: backend architecture, secure APIs, and modern web applications.",
+    ogImageAlt: "Ian Barbosa Santos — Full-stack Developer and Software Engineer",
+  },
+  a11y: {
+    skipLink: "Skip to content",
+    home: "Ian Barbosa Santos — home",
+    primaryNav: "Main",
+    mobileNav: "Mobile navigation",
+    socialLinks: "Professional profiles",
+    backToTop: "Back to top",
+  },
   theme: {
     label: "Theme",
     light: "Light",
@@ -60,16 +79,7 @@ export const en = {
     title: "Projects that show how I build.",
     intro: "A curated selection of public applications and studies, led by my most recent and complete project.",
     featuredLabel: "Featured project",
-    featuredTitle: "Secure event photo sharing",
-    featuredDescription:
-      "A mobile-first application where guests upload and access their photos while administrators manage the collection through explicit access controls.",
     engineeringLabel: "What it demonstrates",
-    engineeringPoints: [
-      "Server-side authorization and private storage",
-      "Signed URLs and real file validation",
-      "RLS, migrations, and policy tests",
-      "Separation of UI, domain, and infrastructure",
-    ],
     selectedTitle: "Other projects",
     repository: "Repository",
     demo: "View application",

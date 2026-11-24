@@ -198,7 +198,11 @@ button {
 }
 
 .language-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 2.5rem;
+  text-decoration: none;
   padding-inline: 0.65rem;
   cursor: pointer;
   font-size: 0.73rem;
@@ -323,7 +327,7 @@ button {
 
 .button svg,
 .project-actions svg,
-.project-card > div > a svg,
+.project-card-links a svg,
 .contact-actions svg,
 .social-links svg {
   width: 1rem;
@@ -614,7 +618,7 @@ button {
 }
 
 .project-actions a,
-.project-card > div > a,
+.project-card-links a,
 .contact-actions > a:not(.button) {
   display: inline-flex;
   align-items: center;
@@ -626,8 +630,14 @@ button {
 }
 
 .project-actions a:hover,
-.project-card > div > a:hover {
+.project-card-links a:hover {
   color: var(--accent-hover);
+}
+
+.project-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
 }
 
 .engineering-panel {
@@ -998,4 +1008,23 @@ button {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.not-found {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.not-found h1 {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.not-found > p:not(.eyebrow) {
+  color: var(--text-soft);
 }

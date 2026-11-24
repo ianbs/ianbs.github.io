@@ -1,6 +1,10 @@
 import type { Content } from "@/content/types";
-import { featuredProject, projects } from "@/data/projects";
+import { featuredProject, projects, type ProjectRepository } from "@/data/projects";
 import { ArrowUpRightIcon, GithubIcon } from "@/components/ui/icons";
+
+function repositoryText(content: Content, repository: ProjectRepository) {
+  return repository.label ? `${content.projects.repository} · ${repository.label}` : content.projects.repository;
+}
 
 export function Projects({ content }: { readonly content: Content }) {
   const language = content.languageCode;
@@ -18,15 +22,17 @@ export function Projects({ content }: { readonly content: Content }) {
         <div className="featured-main">
           <p className="project-label">{content.projects.featuredLabel}</p>
           <p className="project-kicker">{featuredProject.name}</p>
-          <h3>{content.projects.featuredTitle}</h3>
-          <p className="featured-description">{content.projects.featuredDescription}</p>
+          <h3>{featuredProject.title[language]}</h3>
+          <p className="featured-description">{featuredProject.description[language]}</p>
           <ul className="tag-list">
             {featuredProject.stack.map((item) => <li key={item}>{item}</li>)}
           </ul>
           <div className="project-actions">
-            <a href={featuredProject.repository} target="_blank" rel="noopener noreferrer">
-              <GithubIcon />{content.projects.repository}<ArrowUpRightIcon />
-            </a>
+            {featuredProject.repositories.map((repository) => (
+              <a key={repository.url} href={repository.url} target="_blank" rel="noopener noreferrer">
+                <GithubIcon />{repositoryText(content, repository)}<ArrowUpRightIcon />
+              </a>
+            ))}
             {featuredProject.demo && (
               <a href={featuredProject.demo} target="_blank" rel="noopener noreferrer">
                 {content.projects.demo}<ArrowUpRightIcon />
@@ -36,7 +42,7 @@ export function Projects({ content }: { readonly content: Content }) {
         </div>
         <div className="engineering-panel">
           <p>{content.projects.engineeringLabel}</p>
-          <ul>{content.projects.engineeringPoints.map((item) => <li key={item}>{item}</li>)}</ul>
+          <ul>{featuredProject.highlights.map((item) => <li key={item.en}>{item[language]}</li>)}</ul>
         </div>
       </article>
 
@@ -52,9 +58,13 @@ export function Projects({ content }: { readonly content: Content }) {
               <ul className="tag-list">
                 {project.stack.map((item) => <li key={item}>{item}</li>)}
               </ul>
-              <a href={project.repository} target="_blank" rel="noopener noreferrer">
-                {content.projects.repository}<ArrowUpRightIcon />
-              </a>
+              <div className="project-card-links">
+                {project.repositories.map((repository) => (
+                  <a key={repository.url} href={repository.url} target="_blank" rel="noopener noreferrer">
+                    {repositoryText(content, repository)}<ArrowUpRightIcon />
+                  </a>
+                ))}
+              </div>
             </div>
           </article>
         ))}

@@ -17,7 +17,7 @@ export function Hero({ content }: { readonly content: Content }) {
           </a>
           <a className="button button-secondary" href={`mailto:${site.email}`}>{content.hero.contactCta}</a>
         </div>
-        <div className="social-links" aria-label="Social links">
+        <div className="social-links" aria-label={content.a11y.socialLinks}>
           <a href={site.github} target="_blank" rel="noopener noreferrer"><GithubIcon />GitHub</a>
           <a href={site.linkedin} target="_blank" rel="noopener noreferrer"><LinkedinIcon />LinkedIn</a>
         </div>
