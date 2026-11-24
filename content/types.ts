@@ -29,9 +29,10 @@ export type Content = {
   readonly nav: {
     readonly menu: string;
     readonly about: string;
+    readonly experience: string;
     readonly skills: string;
     readonly projects: string;
-    readonly certifications: string;
+    readonly education: string;
     readonly contact: string;
   };
   readonly hero: {
@@ -67,11 +68,17 @@ export type Content = {
     readonly repository: string;
     readonly demo: string;
   };
-  readonly certifications: {
+  readonly experience: {
     readonly eyebrow: string;
     readonly title: string;
-    readonly item: string;
-    readonly description: string;
+    readonly intro: string;
+    readonly present: string;
+  };
+  readonly education: {
+    readonly eyebrow: string;
+    readonly title: string;
+    readonly educationLabel: string;
+    readonly certificationsLabel: string;
   };
   readonly contact: {
     readonly eyebrow: string;

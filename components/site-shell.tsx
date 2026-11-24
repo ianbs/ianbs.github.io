@@ -1,8 +1,9 @@
 import type { Content } from "@/content/types";
 import { Header } from "@/components/layout/header";
 import { About } from "@/components/sections/about";
-import { Certifications } from "@/components/sections/certifications";
 import { Contact } from "@/components/sections/contact";
+import { Education } from "@/components/sections/education";
+import { Experience } from "@/components/sections/experience";
 import { Hero } from "@/components/sections/hero";
 import { Projects } from "@/components/sections/projects";
 import { Skills } from "@/components/sections/skills";
@@ -16,9 +17,10 @@ export function SiteShell({ content }: { readonly content: Content }) {
       <main id="main-content">
         <Hero content={content} />
         <About content={content} />
+        <Experience content={content} />
         <Skills content={content} />
         <Projects content={content} />
-        <Certifications content={content} />
+        <Education content={content} />
         <Contact content={content} />
       </main>
       <footer className="site-footer">

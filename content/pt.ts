@@ -32,9 +32,10 @@ export const pt = {
   nav: {
     menu: "Abrir navegação",
     about: "Sobre",
+    experience: "Experiência",
     skills: "Stack",
     projects: "Projetos",
-    certifications: "Certificações",
+    education: "Formação",
     contact: "Contato",
   },
   hero: {
@@ -84,11 +85,17 @@ export const pt = {
     repository: "Repositório",
     demo: "Ver aplicação",
   },
-  certifications: {
-    eyebrow: "Certificações",
-    title: "Base profissional.",
-    item: "ITIL 4 Foundation",
-    description: "Fundamentos de gestão de serviços de TI e entrega de valor.",
+  experience: {
+    eyebrow: "Experiência",
+    title: "Sistemas reais, em produção.",
+    intro: "Desde 2017 entre desenvolvimento, sustentação de sistemas críticos, dados e infraestrutura.",
+    present: "atual",
+  },
+  education: {
+    eyebrow: "Formação",
+    title: "Base acadêmica e certificações.",
+    educationLabel: "Formação acadêmica",
+    certificationsLabel: "Certificações",
   },
   contact: {
     eyebrow: "Contato",

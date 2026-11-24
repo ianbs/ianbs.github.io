@@ -84,9 +84,10 @@ export function Header({ content }: { readonly content: Content }) {
   const closeMenu = () => setIsMenuOpen(false);
   const links = [
     ["#about", content.nav.about],
+    ["#experience", content.nav.experience],
     ["#skills", content.nav.skills],
     ["#projects", content.nav.projects],
-    ["#certifications", content.nav.certifications],
+    ["#education", content.nav.education],
     ["#contact", content.nav.contact],
   ] as const;
 

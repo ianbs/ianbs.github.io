@@ -32,9 +32,10 @@ export const en = {
   nav: {
     menu: "Open navigation",
     about: "About",
+    experience: "Experience",
     skills: "Stack",
     projects: "Projects",
-    certifications: "Certifications",
+    education: "Education",
     contact: "Contact",
   },
   hero: {
@@ -84,11 +85,17 @@ export const en = {
     repository: "Repository",
     demo: "View application",
   },
-  certifications: {
-    eyebrow: "Certifications",
-    title: "Professional foundation.",
-    item: "ITIL 4 Foundation",
-    description: "Foundations in IT service management and value delivery.",
+  experience: {
+    eyebrow: "Experience",
+    title: "Real systems, in production.",
+    intro: "Since 2017 across development, support of critical systems, data, and infrastructure.",
+    present: "Present",
+  },
+  education: {
+    eyebrow: "Education",
+    title: "Academic background and certifications.",
+    educationLabel: "Education",
+    certificationsLabel: "Certifications",
   },
   contact: {
     eyebrow: "Contact",
