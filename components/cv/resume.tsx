@@ -1,6 +1,6 @@
 import type { Content } from "@/content/types";
 import { cvLanguages, cvLocation, cvSkills, cvSkillTranslations, cvSummary } from "@/data/cv";
-import { certifications, education, experience, formatPeriod } from "@/data/experience";
+import { certifications, education, experience, formatPeriod, yearsOfExperience } from "@/data/experience";
 import { featuredProject, projects } from "@/data/projects";
 import { site } from "@/lib/site";
 import "./resume.css";
@@ -28,7 +28,7 @@ export function Resume({ content }: { readonly content: Content }) {
 
       <section>
         <h2>{content.cv.summary}</h2>
-        <p>{cvSummary[language]}</p>
+        <p>{cvSummary[language].replace("{years}", String(yearsOfExperience()))}</p>
       </section>
 
       <section>

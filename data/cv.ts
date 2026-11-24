@@ -5,15 +5,16 @@ import type { LocalizedText } from "@/data/projects";
  * Experience, education, certifications and projects come from the same data files as the site.
  */
 
+/** "{years}" is replaced with yearsOfExperience() when rendered. */
 export const cvSummary: LocalizedText = {
-  pt: "Desenvolvedor full-stack e Analista de Sistemas, atuando desde 2019 no desenvolvimento e na sustentação de sistemas corporativos críticos do setor de saúde. Experiência com PHP/Laravel, Python, Node.js e React, bancos relacionais (Oracle SQL, PostgreSQL, MySQL), servidores Windows e Linux e gestão de serviços com ITIL 4. Em projetos recentes, trabalho com TypeScript, Next.js e Supabase, com foco em arquitetura de backend, segurança de aplicações e qualidade de software.",
-  en: "Full-stack developer and Systems Analyst, building and supporting critical healthcare business systems since 2019. Experienced with PHP/Laravel, Python, Node.js, and React, relational databases (Oracle SQL, PostgreSQL, MySQL), Windows and Linux servers, and ITIL 4 service management. Recent projects use TypeScript, Next.js, and Supabase, with a focus on backend architecture, application security, and software quality.",
+  pt: "Desenvolvedor full-stack e Analista de Sistemas com mais de {years} anos de experiência em tecnologia; desde 2019, desenvolvo e sustento sistemas corporativos críticos do setor de saúde. No dia a dia, trabalho com PHP/Laravel, SQL, Python e Node.js, análise de dados com Pentaho e Power BI, bancos relacionais (Oracle SQL, PostgreSQL, MySQL), servidores Linux e Windows, nuvem DigitalOcean e gestão de serviços com ITIL 4. Em projetos recentes, uso TypeScript, Next.js e Supabase, com foco em arquitetura de backend, segurança de aplicações e qualidade de software.",
+  en: "Full-stack developer and Systems Analyst with {years}+ years of experience in technology; since 2019 I have built and supported critical healthcare business systems. Day to day I work with PHP/Laravel, SQL, Python, and Node.js, data analysis with Pentaho and Power BI, relational databases (Oracle SQL, PostgreSQL, MySQL), Linux and Windows servers, DigitalOcean cloud, and ITIL 4 service management. Recent projects use TypeScript, Next.js, and Supabase, with a focus on backend architecture, application security, and software quality.",
 };
 
 export const cvSkills: readonly { readonly label: LocalizedText; readonly items: readonly string[] }[] = [
   {
     label: { pt: "Linguagens", en: "Languages" },
-    items: ["TypeScript", "JavaScript", "PHP", "Python", "Java", "C#", "SQL"],
+    items: ["PHP", "SQL", "Python", "JavaScript", "TypeScript", "Java", "C#"],
   },
   {
     label: { pt: "Frameworks", en: "Frameworks" },
@@ -21,11 +22,11 @@ export const cvSkills: readonly { readonly label: LocalizedText; readonly items:
   },
   {
     label: { pt: "Dados", en: "Data" },
-    items: ["PostgreSQL", "Oracle SQL", "MySQL", "Supabase", "Pentaho", "Power BI"],
+    items: ["Análise de dados", "PostgreSQL", "Oracle SQL", "MySQL", "Supabase", "Pentaho", "Power BI"],
   },
   {
     label: { pt: "Infraestrutura", en: "Infrastructure" },
-    items: ["Linux", "Windows Server", "Docker", "Nginx", "Proxmox", "Git", "CI/CD"],
+    items: ["DigitalOcean", "Linux", "Windows Server", "Docker", "Nginx", "Proxmox", "Git", "CI/CD"],
   },
   {
     label: { pt: "Práticas", en: "Practices" },
@@ -35,6 +36,7 @@ export const cvSkills: readonly { readonly label: LocalizedText; readonly items:
 
 /** Practice labels that need translating; everything else is a proper noun. */
 export const cvSkillTranslations: Readonly<Record<string, string>> = {
+  "Análise de dados": "Data analysis",
   "Testes (Vitest, pgTAP)": "Testing (Vitest, pgTAP)",
   "APIs REST": "REST APIs",
   "Autenticação e autorização": "Authentication and authorization",

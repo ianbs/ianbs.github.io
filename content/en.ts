@@ -12,7 +12,7 @@ export const en = {
     alternateOgLocale: "pt_BR",
     title: "Ian Barbosa Santos | Full-stack Developer & Software Engineer",
     description:
-      "Full-stack development with TypeScript, Next.js, Node.js, and PostgreSQL: backend architecture, secure APIs, and modern web applications.",
+      "Full-stack development with Laravel, SQL, Python, Node.js, TypeScript, and Next.js: backend architecture, secure APIs, data analysis, and web applications.",
     ogImageAlt: "Ian Barbosa Santos — Full-stack Developer and Software Engineer",
   },
   a11y: {
@@ -42,7 +42,7 @@ export const en = {
     eyebrow: "Full-stack Developer · Software Engineer",
     role: "I build secure web applications, APIs, and reliable systems.",
     description:
-      "I work with TypeScript, Next.js, Node.js, and PostgreSQL, with particular attention to backend architecture, application security, and software quality.",
+      "Today I work with Laravel, SQL, Python, and Node.js, data analysis with Pentaho, and DigitalOcean cloud infrastructure. In recent projects I use TypeScript and Next.js, always with close attention to backend architecture, security, and software quality.",
     primaryCta: "View projects",
     contactCta: "Get in touch",
     profileAlt: "Ian Barbosa Santos seated in an indoor setting",
@@ -62,16 +62,20 @@ export const en = {
     title: "Technology chosen with purpose.",
     groups: [
       {
-        title: "Current stack",
-        items: ["TypeScript", "Next.js", "React", "Node.js", "PostgreSQL", "Supabase", "Docker"],
+        title: "Day to day",
+        items: ["Laravel", "PHP", "SQL", "Python", "Node.js", "React", "DigitalOcean", "Linux / Windows Server", "Proxmox", "GLPI / ITIL 4"],
+      },
+      {
+        title: "Data and BI",
+        items: ["Data analysis", "Pentaho", "Power BI", "Oracle SQL", "PostgreSQL", "MySQL"],
+      },
+      {
+        title: "Recent projects",
+        items: ["TypeScript", "Next.js", "React", "Supabase", "PostgreSQL", "NestJS", "Docker", "Vitest"],
       },
       {
         title: "Engineering",
         items: ["API design", "Authentication and authorization", "Application security", "Relational databases", "Testing", "CI/CD", "Observability"],
-      },
-      {
-        title: "Previous experience",
-        items: ["NestJS", "Java / Spring", "Python / Flask", "Go", "Data Science", "Cloud / IT Operations"],
       },
     ],
   },
@@ -88,7 +92,7 @@ export const en = {
   experience: {
     eyebrow: "Experience",
     title: "Real systems, in production.",
-    intro: "Since 2017 across development, support of critical systems, data, and infrastructure.",
+    intro: "{years}+ years across development, support of critical systems, data, and infrastructure.",
     present: "Present",
   },
   education: {

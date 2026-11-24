@@ -3,6 +3,16 @@ import type { Language, LocalizedText } from "@/data/projects";
 /** Year and month, e.g. "2020-01". */
 export type YearMonth = `${number}-${number}`;
 
+/** First job in technology (Advlink Sistemas internship). */
+export const careerStart: YearMonth = "2017-10";
+
+/** Full years since careerStart, evaluated at build time (the site and PDFs are rebuilt on change). */
+export function yearsOfExperience(now = new Date()) {
+  const [year, month] = careerStart.split("-").map(Number);
+  const months = (now.getFullYear() - year) * 12 + (now.getMonth() + 1 - month);
+  return Math.floor(months / 12);
+}
+
 export type Role = {
   readonly title: LocalizedText;
   readonly start: YearMonth;

@@ -498,13 +498,12 @@ button {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 3.5rem;
 }
 
 .skill-group {
-  min-height: 310px;
   border: 1px solid var(--line);
   border-radius: 1rem;
   padding: 1.5rem;
@@ -969,15 +968,6 @@ button {
     gap: 3rem;
   }
 
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .skill-group:last-child {
-    grid-column: 1 / -1;
-    min-height: auto;
-  }
-
   .featured-project,
   .contact-inner {
     grid-template-columns: 1fr;
@@ -1051,12 +1041,6 @@ button {
   .about-copy,
   .projects-heading {
     gap: 1.25rem;
-  }
-
-  .skill-group,
-  .skill-group:last-child {
-    grid-column: auto;
-    min-height: auto;
   }
 
   .featured-project {

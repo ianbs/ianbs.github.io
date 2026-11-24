@@ -1,5 +1,5 @@
 import type { Content } from "@/content/types";
-import { experience, formatPeriod, type Role } from "@/data/experience";
+import { experience, formatPeriod, yearsOfExperience, type Role } from "@/data/experience";
 
 export function Experience({ content }: { readonly content: Content }) {
   const language = content.languageCode;
@@ -12,7 +12,7 @@ export function Experience({ content }: { readonly content: Content }) {
           <p className="eyebrow">{content.experience.eyebrow}</p>
           <h2 id="experience-title">{content.experience.title}</h2>
         </div>
-        <p>{content.experience.intro}</p>
+        <p>{content.experience.intro.replace("{years}", String(yearsOfExperience()))}</p>
       </div>
 
       <ol className="timeline">

@@ -12,7 +12,7 @@ export const pt = {
     alternateOgLocale: "en_US",
     title: "Ian Barbosa Santos | Desenvolvedor Full-stack e Engenheiro de Software",
     description:
-      "Desenvolvimento full-stack com TypeScript, Next.js, Node.js e PostgreSQL: arquitetura de backend, APIs seguras e aplicações web modernas.",
+      "Desenvolvimento full-stack com Laravel, SQL, Python, Node.js, TypeScript e Next.js: arquitetura de backend, APIs seguras, análise de dados e aplicações web.",
     ogImageAlt: "Ian Barbosa Santos — Desenvolvedor Full-stack e Engenheiro de Software",
   },
   a11y: {
@@ -42,7 +42,7 @@ export const pt = {
     eyebrow: "Full-stack Developer · Software Engineer",
     role: "Construo aplicações web seguras, APIs e sistemas confiáveis.",
     description:
-      "Trabalho com TypeScript, Next.js, Node.js e PostgreSQL, com atenção especial à arquitetura de backend, segurança de aplicações e qualidade de software.",
+      "Hoje trabalho com Laravel, SQL, Python e Node.js, análise de dados com Pentaho e nuvem na DigitalOcean. Em projetos recentes, uso TypeScript e Next.js, sempre com atenção à arquitetura de backend, à segurança e à qualidade de software.",
     primaryCta: "Ver projetos",
     contactCta: "Entrar em contato",
     profileAlt: "Ian Barbosa Santos sentado em um ambiente interno",
@@ -62,16 +62,20 @@ export const pt = {
     title: "Tecnologia escolhida com propósito.",
     groups: [
       {
-        title: "Stack atual",
-        items: ["TypeScript", "Next.js", "React", "Node.js", "PostgreSQL", "Supabase", "Docker"],
+        title: "No dia a dia",
+        items: ["Laravel", "PHP", "SQL", "Python", "Node.js", "React", "DigitalOcean", "Linux / Windows Server", "Proxmox", "GLPI / ITIL 4"],
+      },
+      {
+        title: "Dados e BI",
+        items: ["Análise de dados", "Pentaho", "Power BI", "Oracle SQL", "PostgreSQL", "MySQL"],
+      },
+      {
+        title: "Projetos recentes",
+        items: ["TypeScript", "Next.js", "React", "Supabase", "PostgreSQL", "NestJS", "Docker", "Vitest"],
       },
       {
         title: "Engenharia",
         items: ["Design de APIs", "Autenticação e autorização", "Segurança de aplicações", "Bancos relacionais", "Testes", "CI/CD", "Observabilidade"],
-      },
-      {
-        title: "Experiência anterior",
-        items: ["NestJS", "Java / Spring", "Python / Flask", "Go", "Data Science", "Cloud / Operações de TI"],
       },
     ],
   },
@@ -88,7 +92,7 @@ export const pt = {
   experience: {
     eyebrow: "Experiência",
     title: "Sistemas reais, em produção.",
-    intro: "Desde 2017 entre desenvolvimento, sustentação de sistemas críticos, dados e infraestrutura.",
+    intro: "Mais de {years} anos entre desenvolvimento, sustentação de sistemas críticos, dados e infraestrutura.",
     present: "atual",
   },
   education: {
